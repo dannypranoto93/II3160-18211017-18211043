@@ -87,46 +87,48 @@
 		}
 		
 		function html_from_xml_all_get(){
-			$filename1 = "../18211010-18211035/progin.xml";
-			$filename2 = "../18211037/RestWebService/data/shortlist.xml";
-			$filename3 = "../BintangAdinandra/menu.xml";
-			$filename4 = "../II3160-18211003-18211050/menu.xml";
-			$filename5 = "../II3160--Pemrograman-Integratif-/DaftarIdol.xml";
-			$filename6 = "../II3160-Tugas1-Tugas2/tab2.xml";
-			$filename7 = "../IPT-Assignments/data2.xml";
-			$filename8 = "../pemrograman_integratif/output.xml";
-			$filename9 = "../Pemrograman-Intergratif/dbxml.xml";
-			$filename10 = "../progin/contoh.xml";
-			$filename11 = "../Progint/data/xml/1.xml";
-			$filename12 = "../BernadetteVina/DataXML.xml";
-			$filename13 = "../testPHP2/test.xml";
-			$filename14 = "../tugas-2-pemrograman-integratif/data3.xml";
-			$filename15 = "../web-service/datasiswa.xml";
-			$filename16 = "../Workspace/Menu.xml";
-			$filename17 = "../Protif/Protif/database/rumah.xml";
+			$filename1 = "http://localhost/habib-andy/index.php/ws/menu/semua";
+			$filename2 = "http://localhost/II3160-18211017-18211043/index.php/Api/xml_from_sql";
+			$filename3 = "http://localhost/BernadetteVina/csv.php";
+			$filename4 = "http://localhost/II3160-18211003-18211050/menu.xml";
+			$filename5 = "http://localhost/II3160--Pemrograman-Integratif-/DaftarIdol.xml";
+			$filename6 = "http://localhost/II3160-Tugas1-Tugas2/tab2.xml";
+			$filename7 = "http://localhost/IPT-Assignments/data2.xml";
+			$filename8 = "http://localhost/pemrograman_integratif/output.xml";
+			$filename9 = "http://localhost/Pemrograman-Intergratif/dbxml.xml";
+			$filename10 = "http://localhost/progin/contoh.xml";
+			$filename11 = "http://localhost/Progint/data/xml/1.xml";
+			$filename12 = "http://localhost/BernadetteVina/DataXML.xml";
+			$filename13 = "http://localhost/testPHP2/test.xml";
+			$filename14 = "http://localhost/tugas-2-pemrograman-integratif/data3.xml";
+			$filename15 = "http://localhost/web-service/datasiswa.xml";
+			$filename16 = "http://localhost/Workspace/Menu.xml";
+			$filename17 = "http://localhost/Protif/Protif/database/rumah.xml";
 			echo "<h1> Retrieve All XML Data from other URI </h1>";
 			for ($i=1; $i<18; $i++){
 				$namafile="filename".$i;
-				echo "No.$i".$$namafile;
- 				$xml = simplexml_load_file($$namafile);
-				if (count($xml) != 0){					
-					echo "<table border=\"1\">";
-					foreach($xml->children()->children() as $child1){
-						echo "<th>".$child1->getName()."</th>";
-					}
-					foreach($xml->children() as $child){
-						echo "<tr>";
-						foreach($child->children() as $child1){
-							echo "<td>$child1</td>";
+				echo "No.$i".$$namafile; 
+				$xml = simplexml_load_file($$namafile);
+				if ($xml){
+					if (count($xml) != 0){					
+						echo "<table border=\"1\">";
+						foreach($xml->children()->children() as $child1){
+							echo "<th>".$child1->getName()."</th>";
 						}
-						echo "</tr>";
-					}				
-					echo "</table>";
+						foreach($xml->children() as $child){
+							echo "<tr>";
+							foreach($child->children() as $child1){
+								echo "<td>$child1</td>";
+							}
+							echo "</tr>";
+						}				
+						echo "</table>";
+					}
+					else {
+						echo "Data Kosong";
+					}
+					echo "<br>";
 				}
-				else {
-					echo "Data Kosong";
-				}
-				echo "<br>";
 			}
 		}
 	}
