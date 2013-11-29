@@ -88,24 +88,18 @@
 		
 		function html_from_xml_all_get(){
 			$filename1 = "http://localhost/habib-andy/index.php/ws/menu/semua";
-			$filename2 = "http://localhost/II3160-18211017-18211043/index.php/Api/xml_from_sql";
-			$filename3 = "http://localhost/BernadetteVina/csv.php";
-			$filename4 = "http://localhost/II3160-18211003-18211050/menu.xml";
-			$filename5 = "http://localhost/II3160--Pemrograman-Integratif-/DaftarIdol.xml";
-			$filename6 = "http://localhost/II3160-Tugas1-Tugas2/tab2.xml";
-			$filename7 = "http://localhost/IPT-Assignments/data2.xml";
-			$filename8 = "http://localhost/pemrograman_integratif/output.xml";
-			$filename9 = "http://localhost/Pemrograman-Intergratif/dbxml.xml";
-			$filename10 = "http://localhost/progin/contoh.xml";
-			$filename11 = "http://localhost/Progint/data/xml/1.xml";
-			$filename12 = "http://localhost/BernadetteVina/DataXML.xml";
-			$filename13 = "http://localhost/testPHP2/test.xml";
-			$filename14 = "http://localhost/tugas-2-pemrograman-integratif/data3.xml";
-			$filename15 = "http://localhost/web-service/datasiswa.xml";
-			$filename16 = "http://localhost/Workspace/Menu.xml";
-			$filename17 = "http://localhost/Protif/Protif/database/rumah.xml";
+			$filename2 = "http://localhost/II3160-18211017-18211043/index.php/Api/xml_from_csv";
+			$filename3 = "http://localhost/II3160-Tugas-18211011-18211053/index.php/search/korans";
+			$filename4 = "http://localhost/II3160-Progin-18211002-18211033/getSelf.php?input=semua";
+			$filename5 = "http://localhost/pemrograman-integratif/artis.php";
+			$filename6 = "http://localhost/pemrograman_integratif/csv.php?nim=all";
+			$filename7 = "http://localhost/II3160-18211013-18211047/xmlconvert.php/pegawai";
+			$filename8 = "http://localhost/Progint-yogidanang/?kolom=all";
+			$filename9 = "http://localhost/18211010-18211035/searchmhs.php?tag=all";
+			$filename10 = "http://localhost/II3160--Pemrograman-Integratif-/ShowIdol.php?show=Info+Idol";
+			$filename11 = "http://localhost/18211014-dan-18211029/index2.php?state=state1&submit2=Submit";
 			echo "<h1> Retrieve All XML Data from other URI </h1>";
-			for ($i=1; $i<18; $i++){
+			for ($i=1; $i<12; $i++){
 				$namafile="filename".$i;
 				echo "No.$i".$$namafile; 
 				$xml = simplexml_load_file($$namafile);
